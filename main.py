@@ -3,18 +3,29 @@ import os, sys
 from wallaby import *
 import Constants as c
 
-def drivetimed(speed, msleep):
-    motor(c.mmright, speed)
-    motor(c.mmleft, speed)
+def drivetimed(lspeed, rspeed, sleep):
+    motor(c.mmright, rspeed)
+    motor(c.mmleft, lspeed)
+    msleep(sleep)
+
 def waitforbutton():
     print "press button"
     while not right_button():
         pass
 
 def main():
-    print "Hi avery"
-    enable_servos()
-    grabcan()
+    print "Hi averyperez"
+    start = seconds()
+    while (seconds() - start) < 30:
+        if analog(c.tophat) > 2000:  #tophat=0
+            drivetimed(100,0,10)
+        else:
+            drivetimed(0,100, 10)
+
+
+
+
+
 
 
 def drivesquare():
@@ -60,6 +71,13 @@ def grabcan():
     ao()
     set_servo_position(c.clawarm, c.clawarmup)
     msleep(3000)
+
+    for i in range(1, 5):
+        while analog(0) > 2000:
+            drivetimed(100,0,500)
+        while analog(0) < 2000:
+            drivetimed(0,100, 500)
+
 
 
 #finish challenge on board(picture on phone), test wait for button, and use drivetimed
