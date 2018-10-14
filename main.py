@@ -13,7 +13,7 @@ def waitforbutton():
     while not right_button():
         pass
 
-def main():
+def main():    #this function linefollows and will stop at a soda can and pick it up
     print "Hi averyperez"
     start = seconds()
     while analog(c.ET) > **************************
@@ -23,13 +23,7 @@ def main():
             drivetimed(0,100, 10)
 
 
-
-
-
-
-
-
-def drivesquare():
+def drivesquare():    #drives in a square
     motor(c.mmright, 100)
     motor(c.mmleft , 100)
     msleep(2000)
