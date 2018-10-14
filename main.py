@@ -12,7 +12,7 @@ def waitforbutton():
         pass
 
 def main():
-    print "Hi JIUfhil uwerhfgiv "
+    print "Hi avery"
     enable_servos()
     grabcan()
 
