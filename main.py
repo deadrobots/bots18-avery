@@ -16,11 +16,12 @@ def waitforbutton():
 def main():
     print "Hi averyperez"
     start = seconds()
-    while (seconds() - start) < 30:
+    while analog(c.ET) > **************************
         if analog(c.tophat) > 2000:  #tophat=0
             drivetimed(100,0,10)
         else:
             drivetimed(0,100, 10)
+
 
 
 
