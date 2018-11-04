@@ -16,12 +16,14 @@ def waitforbutton():
 def main():    #this function linefollows and will stop at a soda can and pick it up
     print "Hi averyperez"
     start = seconds()
-    while analog(c.ET) > **************************
+    while analog(c.ET) < 1800:
         if analog(c.tophat) > 2000:  #tophat=0
-            drivetimed(100,0,10)
+            drivetimed(100,-10,10)
         else:
-            drivetimed(0,100, 10)
-
+            drivetimed(-10,100, 10)
+            ao()
+            msleep(1000)
+    print "found a can"
 
 def drivesquare():    #drives in a square
     motor(c.mmright, 100)
