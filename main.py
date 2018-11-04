@@ -3,13 +3,15 @@ import os, sys
 from wallaby import *
 import Constants as c
 
+
 # Good use of constants *almost* everywhere ;) 
 # Needs comments to explain moveArm()
 # Also your function naming convention should be in camelCase
 # drivetimed = driveTimed,
 # waitforbutton = waitForButton
 # etc
-# this increases code legibility. 
+# this increases code legibility.
+#donka
 
 
 def drivetimed(lspeed, rspeed, sleep):
@@ -48,10 +50,10 @@ def drivesquare():    #drives in a square
         motor(c.mmright,100)
         msleep(1200)
 
-# Add comments here to describe what movearm does. - LMB 
+#move arm moves arm up and down testing it
 def movearm():
-    enable_servos() # enable_servos should ideally be put in your main() function, at the beginning of your program - LMB
-    set_servo_position(0,100) # put in a comment or two to explain what each move does... or use constants so the code is understandable by someone who didn't program it -LMB
+    enable_servos() #starts up the servos
+    set_servo_position(0,100)
     msleep(1000)
     set_servo_position(0,2000) 
     msleep(1000)
@@ -78,7 +80,7 @@ def grabcan():
     set_servo_position(c.clawarm, c.clawarmup)
     msleep(3000)
 
-	# put a comment here to explain what this code does - LMB
+#this code is a loop function 
     for i in range(1, 5):
         while analog(0) > 2000: # Use constants for all sensor/motor/servo ports, please! You already have these defined. Why not use them? - LMB
             drivetimed(100,0,500)
